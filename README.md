@@ -5,7 +5,7 @@ Use your user account
 ``` 
 Run gcloud auth application-default login
 ```
-Use service account (preferred), create service account assign required privilege 
+- [x] Use service account (preferred), create service account assign required privilege 
 and download key file.
 
 set environment variable 
