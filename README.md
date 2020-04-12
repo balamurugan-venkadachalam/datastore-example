@@ -1,4 +1,4 @@
-##Set GOOGLE_APPLICATION_CREDENTIALS=
+## Set GOOGLE_APPLICATION_CREDENTIALS=
 There a few ways to "activate" application default credentials:
 
 Use your user account
@@ -19,7 +19,7 @@ gcloud auth application-default print-access-token
 ```
 
 
-##Installing the emulator
+## Installing the emulator
 The Datastore emulator is a component of the Google Cloud SDK's gcloud tool. Use the gcloud components install command to install the Datastore emulator:
 ```
 gcloud components install cloud-datastore-emulator
@@ -29,7 +29,7 @@ Start the emulator by executing datastore start from a command prompt:
 ```
 gcloud beta emulators datastore start [flags]
 ```
-###Automatically setting the variables
+### Automatically setting the variables
 
 Run env-init using command substitution:
 
