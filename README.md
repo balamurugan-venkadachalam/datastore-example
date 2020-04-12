@@ -32,5 +32,6 @@ gcloud beta emulators datastore start [flags]
 ### Automatically setting the variables
 
 Run env-init using command substitution:
-
+```
 $(gcloud beta emulators datastore env-init)
+```
