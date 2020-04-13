@@ -35,3 +35,20 @@ Run env-init using command substitution:
 ```
 $(gcloud beta emulators datastore env-init)
 ```
+
+### Datastore Emulator viewer
+
+https://www.npmjs.com/package/google-cloud-gui
+
+
+### Reference 
+
+
+- [x] https://github.com/googleapis/google-cloud-java/blob/master/google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/DatastoreExample.java
+- [x] https://github.com/GoogleCloudPlatform/java-docs-samples/blob/2e5996c68440134a79f1511c57529fa5cf987628/appengine-java8/datastore/src/test/java/com/example/appengine/EntitiesTest.java
+- [x] https://github.com/GoogleCloudPlatform/java-docs-samples/blob/2e5996c68440134a79f1511c57529fa5cf987628/appengine-java8/datastore/src/test/java/com/example/appengine/EntitiesTest.java
+- [x] https://cloud.google.com/datastore/docs/concepts/indexes
+- [x] https://cloud.google.com/datastore/docs/tools/indexconfig
+- [x] https://cloud.google.com/appengine/docs/standard/java/datastore/creating-entities
+- [x] https://cloud.google.com/datastore/docs/concepts/queries#datastore-datastore-basic-query-gql
+- [x] https://cloud.google.com/datastore/docs/reference/gql_reference#how_to_form_literals

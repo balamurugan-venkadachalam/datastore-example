@@ -8,27 +8,10 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import com.google.cloud.Timestamp;
-import com.google.cloud.datastore.Cursor;
-import com.google.cloud.datastore.Datastore;
-import com.google.cloud.datastore.DatastoreException;
-import com.google.cloud.datastore.Entity;
-import com.google.cloud.datastore.EntityQuery;
-import com.google.cloud.datastore.FullEntity;
-import com.google.cloud.datastore.IncompleteKey;
-import com.google.cloud.datastore.Key;
-import com.google.cloud.datastore.KeyFactory;
-import com.google.cloud.datastore.ListValue;
-import com.google.cloud.datastore.PathElement;
-import com.google.cloud.datastore.ProjectionEntity;
-import com.google.cloud.datastore.Query;
-import com.google.cloud.datastore.QueryResults;
-import com.google.cloud.datastore.ReadOption;
-import com.google.cloud.datastore.StringValue;
-import com.google.cloud.datastore.StructuredQuery;
+import com.google.cloud.datastore.*;
 import com.google.cloud.datastore.StructuredQuery.CompositeFilter;
 import com.google.cloud.datastore.StructuredQuery.OrderBy;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
-import com.google.cloud.datastore.Transaction;
 import com.google.cloud.datastore.testing.LocalDatastoreHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -96,18 +79,24 @@ public class ConceptsTest {
    */
   @Before
   public void setUp() {
-    datastore = HELPER.getOptions().toBuilder().setNamespace("ghijklmnop").build().getService();
+    //datastore = HELPER.getOptions().toBuilder().setNamespace("ghijklmnop").build().getService();
+    //datastore = DatastoreOptions.newBuilder().setNamespace("test").build().getService();
+    datastore = DatastoreOptions.newBuilder().setNamespace("test").setHost("localhost:8081").setProjectId("my-project-id").build().getService();
     StructuredQuery<Key> query = Query.newKeyQueryBuilder().build();
     QueryResults<Key> result = datastore.run(query);
     datastore.delete(Iterators.toArray(result, Key.class));
+
     keyFactory = datastore.newKeyFactory().setKind("Task");
     taskKey = keyFactory.newKey("some-arbitrary-key");
     testEntity = Entity.newBuilder(taskKey, TEST_FULL_ENTITY).build();
+
     Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
     calendar.set(1990, JANUARY, 1);
     startDate = Timestamp.of(calendar.getTime());
+
     calendar.set(2000, JANUARY, 1);
     endDate = Timestamp.of(calendar.getTime());
+
     calendar.set(1999, DECEMBER, 31);
     includedDate = Timestamp.of(calendar.getTime());
   }
@@ -118,10 +107,10 @@ public class ConceptsTest {
    * @throws IOException if there are errors stopping the local Datastore
    * @throws InterruptedException if there are errors stopping the local Datastore
    */
-  @AfterClass
+/*  @AfterClass
   public static void afterClass() throws IOException, InterruptedException, TimeoutException {
     HELPER.stop(Duration.ofMinutes(1));
-  }
+  }*/
 
   private void assertValidKey(Key taskKey) {
     datastore.put(Entity.newBuilder(taskKey, TEST_FULL_ENTITY).build());
