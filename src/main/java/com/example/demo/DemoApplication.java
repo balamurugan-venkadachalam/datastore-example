@@ -9,11 +9,13 @@ import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.gcp.data.datastore.repository.config.EnableDatastoreRepositories;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 
 @ShellComponent
 @SpringBootApplication
+@EnableDatastoreRepositories
 public class DemoApplication {
 	@Autowired
 	BookRepository bookRepository;

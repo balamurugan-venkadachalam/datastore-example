@@ -20,13 +20,6 @@ public class DemoApplicationTests {
 
 	@Test
 	public void test1() throws IOException, InterruptedException {
-		// keyFactory = datastore.newKeyFactory().setKind("TestEntity");
-		//DatastoreOptions.getDefaultInstance().getService();
-		Datastore ds = DatastoreOptions.newBuilder().setHost("http://localhost:8081").setProjectId("my-project-id").build().getService();
-		com.google.cloud.datastore.Key key = ds.newKeyFactory().setKind("MyEntity").newKey("mykey");
-		com.google.cloud.datastore.Entity entity = com.google.cloud.datastore.Entity.newBuilder(key).set("p1", "Hello World!").build();
-		entity = ds.put(entity);
-		entity = ds.get(key);
-		System.out.println(entity);
+
 	}
 }

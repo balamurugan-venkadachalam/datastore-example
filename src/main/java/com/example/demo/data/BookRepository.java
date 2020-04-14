@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.cloud.gcp.data.datastore.repository.DatastoreRepository;
 
 
-public interface BookRepository extends DatastoreRepository<Book, Long> {
+public interface  BookRepository extends DatastoreRepository<Book, Long> {
 
   List<Book> findByAuthor(String author);
 
