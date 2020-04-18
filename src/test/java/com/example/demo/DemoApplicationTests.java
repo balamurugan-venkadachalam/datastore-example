@@ -1,32 +1,38 @@
 package com.example.demo;
 
-import com.google.cloud.datastore.Datastore;
+import com.example.demo.data.model.Item;
+import com.example.demo.data.model.ShoppingOrder;
+import com.example.demo.data.ShoppingOrderRepository;
 
-import com.google.cloud.datastore.DatastoreOptions;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class DemoApplicationTests {
+
+	@Autowired
+	private ShoppingOrderRepository repository;
 
 	@Test
 	public void contextLoads() {
 	}
 
 	@Test
-	public void test1() throws IOException, InterruptedException {
-		// keyFactory = datastore.newKeyFactory().setKind("TestEntity");
-		//DatastoreOptions.getDefaultInstance().getService();
-		Datastore ds = DatastoreOptions.newBuilder().setHost("http://localhost:8081").setProjectId("my-project-id").build().getService();
-		com.google.cloud.datastore.Key key = ds.newKeyFactory().setKind("MyEntity").newKey("mykey");
-		com.google.cloud.datastore.Entity entity = com.google.cloud.datastore.Entity.newBuilder(key).set("p1", "Hello World!").build();
-		entity = ds.put(entity);
-		entity = ds.get(key);
-		System.out.println(entity);
+	public void testEmbaddedObject() throws IOException, InterruptedException {
+		ShoppingOrder shoppingOrder = new ShoppingOrder();
+		shoppingOrder.setId(1212121l);
+		List<Item> items = new ArrayList<>();
+		shoppingOrder.setItems(items);
+		ShoppingOrder savedShoppingOrder = repository.save(shoppingOrder);
+		Assert.assertNotNull(savedShoppingOrder);
 	}
 }
