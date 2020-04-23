@@ -76,3 +76,21 @@ Furthermore, it optionally adds strong consistency for multi-row level via ances
 - [x] Cloud Datastore does not include support for join operations, inequality filtering on multiple properties, or filtering on data based on results of a subquery. 
 
 - [x] Cloud Datastore doesn't require entities of the same kind to have a consistent property set
+
+## Index
+```
+gcloud datastore indexes create index.yaml
+gcloud datastore indexes cleanup index.yaml
+```
+## Import and Export
+```
+gcloud datastore export gs://bucket-name --async
+gcloud datastore export --kinds="KIND1,KIND2" --namespaces="(default),NAMESPACE2" gs://bucket-name --async
+
+```
+## Useful cmds
+
+```
+gcloud datastore operations COMMAND [GCLOUD_WIDE_FLAG …]
+```
+
