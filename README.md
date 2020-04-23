@@ -80,6 +80,11 @@ gcloud datastore import --kinds="KIND1,KIND2" --namespaces="(default),NAMESPACE2
 gcloud datastore operations COMMAND [GCLOUD_WIDE_FLAG …]
 ```
 
+## Limits
+
+Maximum number of entity groups that can be accessed in a transaction	25
+Maximum rate of transactions reading from or writing to an entity group	1 per sec
+Maximum write rate to an entity group 1 per sec
 
 
 ### Reference 
