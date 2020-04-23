@@ -41,21 +41,6 @@ $(gcloud beta emulators datastore env-init)
 https://www.npmjs.com/package/google-cloud-gui
 
 
-### Reference 
-
-
-- [x] https://github.com/googleapis/google-cloud-java/blob/master/google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/DatastoreExample.java
-- [x] https://github.com/GoogleCloudPlatform/java-docs-samples/blob/2e5996c68440134a79f1511c57529fa5cf987628/appengine-java8/datastore/src/test/java/com/example/appengine/EntitiesTest.java
-- [x] https://cloud.google.com/datastore/docs/concepts/indexes
-- [x] https://cloud.google.com/datastore/docs/tools/indexconfig
-- [x] https://cloud.google.com/appengine/docs/standard/java/datastore/creating-entities
-- [x] https://cloud.google.com/datastore/docs/concepts/queries#datastore-datastore-basic-query-gql
-- [x] https://cloud.google.com/datastore/docs/reference/gql_reference#how_to_form_literals
-- [x] https://cloud.google.com/datastore/docs/concepts/limits
-- [x] https://stackoverflow.com/questions/37602604/is-google-cloud-datastore-a-column-oriented-nosql-database
-
-
-
 ## BigTable
 
 This is a necessary base for Datastore. Maps row key, column key and timestamp (three-dimensional mapping) to an array of bytes. Data is stored in lexicographic order by row key.
@@ -93,4 +78,20 @@ gcloud datastore export --kinds="KIND1,KIND2" --namespaces="(default),NAMESPACE2
 ```
 gcloud datastore operations COMMAND [GCLOUD_WIDE_FLAG …]
 ```
+
+
+
+### Reference 
+
+
+- [x] https://github.com/googleapis/google-cloud-java/blob/master/google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/DatastoreExample.java
+- [x] https://github.com/GoogleCloudPlatform/java-docs-samples/blob/2e5996c68440134a79f1511c57529fa5cf987628/appengine-java8/datastore/src/test/java/com/example/appengine/EntitiesTest.java
+- [x] https://cloud.google.com/datastore/docs/concepts/indexes
+- [x] https://cloud.google.com/datastore/docs/tools/indexconfig
+- [x] https://cloud.google.com/appengine/docs/standard/java/datastore/creating-entities
+- [x] https://cloud.google.com/datastore/docs/concepts/queries#datastore-datastore-basic-query-gql
+- [x] https://cloud.google.com/datastore/docs/reference/gql_reference#how_to_form_literals
+- [x] https://cloud.google.com/datastore/docs/concepts/limits
+- [x] https://stackoverflow.com/questions/37602604/is-google-cloud-datastore-a-column-oriented-nosql-database
+
 
