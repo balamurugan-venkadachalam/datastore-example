@@ -56,7 +56,7 @@ https://www.npmjs.com/package/google-cloud-gui
 
 
 
-BigTable
+## BigTable
 
 This is a necessary base for Datastore. Maps row key, column key and timestamp (three-dimensional mapping) to an array of bytes. Data is stored in lexicographic order by row key.
 
@@ -67,8 +67,12 @@ Megastore
 
 This layer adds transactions on top of the BigTable.
 
-Datastore
+## Datastore
 
 A layer above Megastore. Enables to run queries as index scans on BigTable. Here index is not used for performance improvement but is required for queries to return results.
 
 Furthermore, it optionally adds strong consistency for multi-row level via ancestor queries. Such queries force the respective indexes to update before executing actual scan.
+
+- [x] Cloud Datastore does not include support for join operations, inequality filtering on multiple properties, or filtering on data based on results of a subquery. 
+
+- [x] Cloud Datastore doesn't require entities of the same kind to have a consistent property set
