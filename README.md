@@ -71,6 +71,7 @@ gcloud datastore indexes cleanup index.yaml
 ```
 gcloud datastore export gs://bucket-name --async
 gcloud datastore export --kinds="KIND1,KIND2" --namespaces="(default),NAMESPACE2" gs://bucket-name --async
+gcloud datastore import --kinds="KIND1,KIND2" --namespaces="(default),NAMESPACE2" gs://bucket-name/file-path/file-name.overall_export_metadata --async
 
 ```
 ## Useful cmds
