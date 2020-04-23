@@ -86,10 +86,18 @@ Maximum number of entity groups that can be accessed in a transaction	25
 Maximum rate of transactions reading from or writing to an entity group	1 per sec
 Maximum write rate to an entity group 1 per sec
 
+## Sharding & Replication
+
+Replication can be used to read a portion of the key range at a higher rate than Bigtable permits. You should use sharding to write to a portion of the key range at a higher rate than Bigtable permits.
+
+Sharding splits a single entity into many. Datastore and Bigtable will shard automatically. But if you're application requires more writes than Bigtable's limits, you can shard manually
+
+https://cloud.google.com/datastore/docs/best-practices#sharding_and_replication
+
 
 ### Reference 
 
-
+- [x] https://cloud.google.com/datastore/docs/best-practices
 - [x] https://github.com/googleapis/google-cloud-java/blob/master/google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/DatastoreExample.java
 - [x] https://github.com/GoogleCloudPlatform/java-docs-samples/blob/2e5996c68440134a79f1511c57529fa5cf987628/appengine-java8/datastore/src/test/java/com/example/appengine/EntitiesTest.java
 - [x] https://cloud.google.com/datastore/docs/concepts/indexes
