@@ -96,6 +96,7 @@ https://cloud.google.com/datastore/docs/best-practices#sharding_and_replication
 
 
 ### Reference 
+ -[x] https://medium.com/firebase-developers/the-top-10-things-to-know-about-firestore-when-choosing-a-database-for-your-app-a3b71b80d979
 
 - [x] https://cloud.google.com/datastore/docs/best-practices
 - [x] https://github.com/googleapis/google-cloud-java/blob/master/google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/DatastoreExample.java
